@@ -1,0 +1,18 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: hsl(26, 100%, 55%);
+  color: hsl(0, 0%, 100%);
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  box-shadow: -1px 11px 44px 6px rgba(134, 134, 134, 0.75);
+  -webkit-box-shadow: -1px 11px 44px 6px rgba(134, 134, 134, 0.75);
+  -moz-box-shadow: -1px 11px 44px 6px rgba(134, 134, 134, 0.75);
+}

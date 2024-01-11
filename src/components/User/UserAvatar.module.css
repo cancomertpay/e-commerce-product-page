@@ -1,0 +1,6 @@
+.avatar img {
+  width: 24px;
+  height: 24px;
+  border: 2px solid hsl(26, 100%, 55%);
+  border-radius: 50%;
+}
