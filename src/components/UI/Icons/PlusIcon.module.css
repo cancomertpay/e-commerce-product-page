@@ -1,0 +1,10 @@
+.plus {
+  fill: hsl(26, 100%, 55%);
+  cursor: pointer;
+  transition: fill 0.5s;
+  filter: drop-shadow(4px 4px 10px hsl(26, 100%, 55%));
+}
+
+.plus:hover {
+  filter: opacity(70%) drop-shadow(4px 4px 10px hsl(26, 100%, 55%));
+}

@@ -1,0 +1,9 @@
+.shop-cart-icon {
+  fill: #69707D;
+  transition: fill 0.5s;
+  cursor: pointer;
+}
+
+.shop-cart-icon:hover {
+  fill: hsl(220, 13%, 13%);
+}

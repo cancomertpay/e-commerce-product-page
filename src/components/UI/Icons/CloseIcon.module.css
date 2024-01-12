@@ -1,0 +1,9 @@
+.close {
+  fill: hsl(219, 9%, 45%);
+  cursor: pointer;
+  transition: fill 0.5s;
+}
+
+.close:hover {
+  fill: hsl(220, 13%, 13%);
+}

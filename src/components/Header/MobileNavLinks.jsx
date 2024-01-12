@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import classes from "./MobileNavLinks.module.css";
 import closeIcon from "../../assets/images/icon-close.svg";
+import CloseIcon from "../UI/Icons/CloseIcon";
 
 function Navlinks({ isOpen, onClose, children }) {
   return isOpen
@@ -9,7 +10,7 @@ function Navlinks({ isOpen, onClose, children }) {
         <div className={classes["nav-links-container"]}>
           <div className={classes["nav-links"]}>
             <div className={classes.close} onClick={onClose}>
-              <img src={closeIcon} alt="close-icon" />
+              <CloseIcon />
             </div>
             {children}
           </div>

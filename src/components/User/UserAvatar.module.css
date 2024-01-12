@@ -1,6 +1,13 @@
 .avatar img {
   width: 24px;
   height: 24px;
+  border: 2px solid hsl(0, 0%, 100%);
+  border-radius: 50%;
+  transition: border 0.5s;
+  cursor: pointer;
+}
+
+.avatar img:hover {
   border: 2px solid hsl(26, 100%, 55%);
   border-radius: 50%;
 }

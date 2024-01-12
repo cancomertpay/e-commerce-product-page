@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 // redux
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { uiActions } from "../../store/ui-slice";
 
 // styles
 import classes from "./Header.module.css";
@@ -9,23 +10,24 @@ import classes from "./Header.module.css";
 import Navbar from "./Navbar";
 import ShopCart from "../Shop/ShopCart";
 import UserAvatar from "../User/UserAvatar";
-
+import ShopIcon from "../UI/Icons/ShopIcon";
 // logos&icons
 import brandLogo from "../../assets/images/logo.svg";
 import shopIcon from "../../assets/images/icon-cart.svg";
 
 function Header() {
-  const cartQuantity = useSelector((state) => state.cart.totalQuantity);
+  const dispatch = useDispatch();
 
-  const [isCartOpen, setIsCartOpen] = useState(false);
+  const cartQuantity = useSelector((state) => state.cart.totalQuantity);
+  const isCartOpen = useSelector((state) => state.ui.isOpen);
 
   const toggleCart = () => {
-    setIsCartOpen((prev) => !prev);
+    dispatch(uiActions.toggleUi());
   };
 
   const handleOverlayClick = (event) => {
     if (isCartOpen && !event.target.closest("#shop-cart")) {
-      setIsCartOpen(false);
+      dispatch(uiActions.toggleUi());
     }
   };
 
@@ -42,10 +44,8 @@ function Header() {
         <div onClick={toggleCart} className={classes["shop-icon-group"]}>
           {cartQuantity && cartQuantity > 0 ? (
             <span className={classes["product-qty"]}>{cartQuantity}</span>
-          ) : (
-            null
-          )}
-          <img src={shopIcon} alt="shop-icon" />
+          ) : null}
+          <ShopIcon />
         </div>
         <ShopCart isOpen={isCartOpen} handleOverlayClick={handleOverlayClick} />
         <UserAvatar />

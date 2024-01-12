@@ -11,4 +11,6 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
+  color: hsl(220, 13%, 13%);
+  background-color: hsl(0, 0%, 100%);
 }

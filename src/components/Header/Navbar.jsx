@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import classes from "./Navbar.module.css";
 import menuIcon from "../../assets/images/icon-menu.svg";
 import MobileNavLinks from "./MobileNavLinks";
+import NavLinksIcon from "../UI/Icons/NavLinksIcon";
 
 function Navbar() {
   const [toggleNavlinks, setToggleNavlinks] = useState(false);
@@ -15,7 +16,7 @@ function Navbar() {
   };
   return (
     <nav className={classes.navbar}>
-      <img src={menuIcon} alt="icon-menu" onClick={NavlinksOpenHandler} />
+      <NavLinksIcon onClick={NavlinksOpenHandler} />
       {/* mobile */}
       <MobileNavLinks isOpen={toggleNavlinks} onClose={navlinksCloseHandler}>
         <ul>

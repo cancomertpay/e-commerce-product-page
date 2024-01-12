@@ -66,6 +66,12 @@ li {
   margin: 1.5rem 0;
   font-size: 18px;
   font-weight: bold;
+  cursor: pointer;
+  transition: color 0.5s;
+}
+
+li:hover {
+  color: hsl(219, 9%, 45%);
 }
 
 li:nth-child(1) {

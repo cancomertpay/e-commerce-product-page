@@ -1,18 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // redux
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
+import { uiActions } from "../../store/ui-slice";
 // components
 import ImageSlider from "../Shop/ImageSlider";
+import Button from "../UI/Button";
+import MinusIcon from "../UI/Icons/MinusIcon";
+import PlusIcon from "../UI/Icons/PlusIcon";
 // styles
 import classes from "./Product.module.css";
 // custom hooks
 import useDiscounter from "../../hooks/useDiscounter";
 // icons
 import cartIcon from "../../assets/images/icon-cart-btn.svg";
-import iconMinus from "../../assets/images/icon-minus.svg";
-import iconPlus from "../../assets/images/icon-plus.svg";
-import Button from "../UI/Button";
 
 function Product({
   id,
@@ -34,6 +35,10 @@ function Product({
   const dispatch = useDispatch();
 
   const addToCartHandler = () => {
+    if (productQty <= 0) {
+      return;
+    }
+
     const countedPrice = productQty * discountedPrice;
 
     dispatch(
@@ -47,21 +52,41 @@ function Product({
         thumbnail: thumbnail[0],
       })
     );
-    setProductQty(1);
+    setProductQty(0);
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+
+    dispatch(uiActions.toggleUi());
   };
 
   // states
-  const [productQty, setProductQty] = useState(1);
+  const [productQty, setProductQty] = useState(0);
+  const [dumbAnimation, setDumbAnimation] = useState(false);
+
   const increaseQty = () => {
+    setDumbAnimation((prev) => !prev);
     setProductQty((prev) => prev + 1);
   };
 
   const decreaseQty = () => {
-    if (productQty === 1) {
+    if (productQty === 0) {
       return;
     }
+    setDumbAnimation((prev) => !prev);
     setProductQty((prev) => prev - 1);
   };
+
+  useEffect(() => {
+    const dumbAnimationTimeout = setInterval(() => {
+      setDumbAnimation(false);
+    }, 100);
+    return () => {
+      clearInterval(dumbAnimationTimeout);
+    };
+  }, [dumbAnimation]);
 
   return (
     <>
@@ -89,11 +114,11 @@ function Product({
         </div>
         <div className={classes.quantity}>
           <div className={classes["minus-icon"]} onClick={decreaseQty}>
-            <img src={iconMinus} width={12} height={4} alt="minus-icon" />
+            <MinusIcon />
           </div>
-          <p>{productQty}</p>
+          <p className={`${dumbAnimation ? classes.dumb : ""}`}>{productQty}</p>
           <div onClick={increaseQty}>
-            <img src={iconPlus} width={12} height={12} alt="plus-icon" />
+            <PlusIcon />
           </div>
         </div>
         <Button onClick={addToCartHandler}>

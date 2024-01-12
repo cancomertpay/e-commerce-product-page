@@ -12,7 +12,9 @@
   padding: 1rem;
   border-radius: 8px;
   font-weight: 700;
-  box-shadow: -1px 11px 44px 6px rgba(134, 134, 134, 0.75);
-  -webkit-box-shadow: -1px 11px 44px 6px rgba(134, 134, 134, 0.75);
-  -moz-box-shadow: -1px 11px 44px 6px rgba(134, 134, 134, 0.75);
+  filter: drop-shadow(4px 4px 10px hsl(26, 100%, 55%));
+}
+
+.button:hover {
+  filter: opacity(70%) drop-shadow(4px 4px 10px hsl(26, 100%, 55%));
 }

@@ -12,7 +12,6 @@ import classes from "./ShopCart.module.css";
 
 function ShopCart({ isOpen, handleOverlayClick }) {
   const cartItems = useSelector((state) => state.cart.items);
-  console.log(cartItems);
   return isOpen
     ? ReactDOM.createPortal(
         <div

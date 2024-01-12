@@ -1,5 +1,7 @@
 import React from "react";
-
+// redux
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../store/cart-slice";
 // styles
 import classes from "./CartItem.module.css";
 // icons
@@ -9,9 +11,14 @@ import currencyFormatter from "../../utils/currencyFormatter";
 
 function CartItem(props) {
   const { id, title, price, total, quantity, thumbnail } = props.item;
+  const dispatch = useDispatch();
 
   const formattedPrice = currencyFormatter(price);
   const formattedTotalPrice = currencyFormatter(total);
+
+  const handleRemoveItem = () => {
+    dispatch(cartActions.removeItemFromCart(id));
+  };
   return (
     <div className={classes["cart-item"]}>
       <span className={classes.thumbnail}>
@@ -30,9 +37,9 @@ function CartItem(props) {
           </span>
         </div>
       </div>
-      <span>
+      <div onClick={handleRemoveItem}>
         <img src={deleteIcon} alt="delete-icon" />
-      </span>
+      </div>
     </div>
   );
 }
