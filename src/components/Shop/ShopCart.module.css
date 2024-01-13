@@ -49,7 +49,7 @@ hr {
 }
 
 .shop-cart-body {
-  overflow-y: scroll;
+  overflow-y: auto;
   text-align: center;
 }
 
@@ -63,4 +63,17 @@ hr {
 .checkout-button {
   padding: 1rem;
   box-sizing: border-box;
+}
+
+@media only screen and (min-width: 1200px) {
+  .shop-cart-container {
+    left: 30rem;
+  }
+
+  .shop-cart {
+    width: 25%;
+    box-shadow: 2px 4px 21px 3px rgba(109, 109, 109, 0.75);
+    -webkit-box-shadow: 2px 4px 21px 3px rgba(109, 109, 109, 0.75);
+    -moz-box-shadow: 2px 4px 21px 3px rgba(109, 109, 109, 0.75);
+  }
 }

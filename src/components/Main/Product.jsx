@@ -8,6 +8,7 @@ import ImageSlider from "../Shop/ImageSlider";
 import Button from "../UI/Button";
 import MinusIcon from "../UI/Icons/MinusIcon";
 import PlusIcon from "../UI/Icons/PlusIcon";
+// import Lightbox from "../Main/Lightbox";
 // styles
 import classes from "./Product.module.css";
 // custom hooks
@@ -65,6 +66,7 @@ function Product({
   // states
   const [productQty, setProductQty] = useState(0);
   const [dumbAnimation, setDumbAnimation] = useState(false);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   const increaseQty = () => {
     setDumbAnimation((prev) => !prev);
@@ -90,9 +92,13 @@ function Product({
 
   return (
     <>
-      <div>
+      <div
+        className={classes.thumbnail}
+        onClick={() => setIsLightboxOpen((prev) => !prev)}
+      >
         <ImageSlider title={title} thumbnail={thumbnail} />
       </div>
+      {/* <Lightbox isOpen={isLightboxOpen} /> */}
       <div className={classes["product-container"]}>
         <div className={classes["product-header"]}>
           <h3>{brand.toLocaleUpperCase()}</h3>
@@ -112,18 +118,22 @@ function Product({
             </div>
           )}
         </div>
-        <div className={classes.quantity}>
-          <div className={classes["minus-icon"]} onClick={decreaseQty}>
-            <MinusIcon />
+        <div className={classes["add-to-cart-container"]}>
+          <div className={classes.quantity}>
+            <button className={classes["minus-icon"]} onClick={decreaseQty}>
+              <MinusIcon />
+            </button>
+            <p className={`${dumbAnimation ? classes.dumb : ""}`}>
+              {productQty}
+            </p>
+            <button className={classes["plus-icon"]} onClick={increaseQty}>
+              <PlusIcon />
+            </button>
           </div>
-          <p className={`${dumbAnimation ? classes.dumb : ""}`}>{productQty}</p>
-          <div onClick={increaseQty}>
-            <PlusIcon />
-          </div>
+          <Button onClick={addToCartHandler}>
+            <img width={16} src={cartIcon} alt="cart-icon" /> Add to cart
+          </Button>
         </div>
-        <Button onClick={addToCartHandler}>
-          <img width={16} src={cartIcon} alt="cart-icon" /> Add to cart
-        </Button>
       </div>
     </>
   );

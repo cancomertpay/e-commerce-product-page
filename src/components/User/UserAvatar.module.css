@@ -1,6 +1,5 @@
 .avatar img {
-  width: 24px;
-  height: 24px;
+  width: 26px;
   border: 2px solid hsl(0, 0%, 100%);
   border-radius: 50%;
   transition: border 0.5s;
@@ -11,3 +10,13 @@
   border: 2px solid hsl(26, 100%, 55%);
   border-radius: 50%;
 }
+
+@media only screen and (min-width: 1200px) {
+  .avatar {
+    margin-left: 2rem;
+  }
+  .avatar img {
+    width: 45px;
+  }
+}
+

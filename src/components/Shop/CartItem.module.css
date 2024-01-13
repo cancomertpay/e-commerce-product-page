@@ -49,3 +49,7 @@
   font-weight: 600;
   color: hsl(220, 13%, 13%);
 }
+
+.delete {
+  cursor: pointer;
+}

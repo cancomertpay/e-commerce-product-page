@@ -32,23 +32,28 @@ function Header() {
   };
 
   return (
-    <header className={classes.header}>
-      <div className={classes["nav-brand"]}>
-        <Navbar />
-        <div>
-          <img src={brandLogo} alt="sneakers-logo" />
+    <header className={classes["header-container"]}>
+      <div className={classes.header}>
+        <div className={classes["nav-brand"]}>
+          <Navbar />
+          <div>
+            <img src={brandLogo} alt="sneakers-logo" />
+          </div>
         </div>
-      </div>
-      <div className={classes["nav-brand"]}>
-        {/* shop cart icon */}
-        <div onClick={toggleCart} className={classes["shop-icon-group"]}>
-          {cartQuantity && cartQuantity > 0 ? (
-            <span className={classes["product-qty"]}>{cartQuantity}</span>
-          ) : null}
-          <ShopIcon />
+        <div className={classes["nav-shop"]}>
+          {/* shop cart icon */}
+          <div onClick={toggleCart} className={classes["shop-icon-group"]}>
+            {cartQuantity && cartQuantity > 0 ? (
+              <span className={classes["product-qty"]}>{cartQuantity}</span>
+            ) : null}
+            <ShopIcon />
+          </div>
+          <ShopCart
+            isOpen={isCartOpen}
+            handleOverlayClick={handleOverlayClick}
+          />
+          <UserAvatar />
         </div>
-        <ShopCart isOpen={isCartOpen} handleOverlayClick={handleOverlayClick} />
-        <UserAvatar />
       </div>
     </header>
   );

@@ -2,9 +2,11 @@
 import productImgThumbnail1 from "../assets/images/image-product-1-thumbnail.jpg";
 import productImgThumbnail2 from "../assets/images/image-product-2-thumbnail.jpg";
 import productImgThumbnail3 from "../assets/images/image-product-3-thumbnail.jpg";
+import productImgThumbnail4 from "../assets/images/image-product-4-thumbnail.jpg";
 import productImg1 from "../assets/images/image-product-1.jpg";
 import productImg2 from "../assets/images/image-product-2.jpg";
 import productImg3 from "../assets/images/image-product-3.jpg";
+import productImg4 from "../assets/images/image-product-4.jpg";
 
 const products = [
   {
@@ -18,8 +20,9 @@ const products = [
       productImgThumbnail1,
       productImgThumbnail2,
       productImgThumbnail3,
+      productImgThumbnail4,
     ],
-    image: [productImg1, productImg2, productImg3],
+    image: [productImg1, productImg2, productImg3, productImg4],
     discount: "50",
   },
 ];

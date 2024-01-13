@@ -57,12 +57,12 @@
   animation: rotateAnimation 0.5s ease-in-out;
 }
 
-ul {
+.nav-links ul {
   list-style: none;
   padding: 0;
 }
 
-li {
+.nav-links li {
   margin: 1.5rem 0;
   font-size: 18px;
   font-weight: bold;
@@ -70,25 +70,25 @@ li {
   transition: color 0.5s;
 }
 
-li:hover {
+.nav-links li:hover {
   color: hsl(219, 9%, 45%);
 }
 
-li:nth-child(1) {
+.nav-links li:nth-child(1) {
   animation: textAnimation 1s;
 }
-li:nth-child(2) {
+.nav-links li:nth-child(2) {
   animation: textAnimation 1.2s;
 }
-li:nth-child(3) {
+.nav-links li:nth-child(3) {
   animation: textAnimation 1.4s;
 }
-li:nth-child(4) {
+.nav-links li:nth-child(4) {
   animation: textAnimation 1.6s;
 }
-li:nth-child(5) {
+.nav-links li:nth-child(5) {
   animation: textAnimation 1.8s;
 }
-li:nth-child(6) {
+.nav-links li:nth-child(6) {
   animation: textAnimation 2s;
 }

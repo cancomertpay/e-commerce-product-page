@@ -55,3 +55,57 @@
 .arrow.right {
   right: 15px;
 }
+
+.mobile-hidden {
+  display: none;
+}
+
+@media only screen and (min-width: 1200px) {
+  .desktop-hidden {
+    display: none;
+  }
+
+  .slide {
+    text-align: center;
+  }
+
+  .thumbnails-container {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .thumbnail-array {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .thumbnail-array-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .thumbnail-array-item img {
+    width: 90px !important;
+    height: 90px !important;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+
+  .thumbnail-array-item img:hover {
+    filter: drop-shadow(4px 4px 10px hsl(26, 100%, 55%));
+    transform: scale(1.2)
+  }
+
+  .active {
+    filter: opacity(20%);
+  }
+
+  .active-border {
+    border: 3px solid hsl(26, 100%, 55%);
+    border-radius: 20px;
+  }
+}

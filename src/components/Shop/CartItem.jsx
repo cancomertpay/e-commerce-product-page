@@ -37,7 +37,7 @@ function CartItem(props) {
           </span>
         </div>
       </div>
-      <div onClick={handleRemoveItem}>
+      <div className={classes.delete} onClick={handleRemoveItem}>
         <img src={deleteIcon} alt="delete-icon" />
       </div>
     </div>

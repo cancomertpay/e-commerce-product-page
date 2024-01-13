@@ -10,7 +10,7 @@ import Button from "../UI/Button";
 // styles
 import classes from "./ShopCart.module.css";
 
-function ShopCart({ isOpen, handleOverlayClick }) {
+function ShopCart({ isOpen, handleOverlayClick}) {
   const cartItems = useSelector((state) => state.cart.items);
   return isOpen
     ? ReactDOM.createPortal(

@@ -17,6 +17,13 @@ h1 {
   gap: 1rem;
 }
 
+.nav-shop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
 .shop-icon-group {
   position: relative;
 }
@@ -32,4 +39,20 @@ h1 {
   font-weight: 600;
   padding: 2px 5px;
   border-radius: 50%;
+}
+
+/* LG-DEVICES */
+@media only screen and (min-width: 1200px) {
+  .nav-brand {
+    flex-direction: row-reverse;
+  }
+
+  .header-container {
+    padding: 0 10rem;
+  }
+
+  .header {
+    border-bottom: 2px solid hsl(223, 64%, 98%);
+    padding: 0;
+  }
 }

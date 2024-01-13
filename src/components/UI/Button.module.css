@@ -13,8 +13,9 @@
   border-radius: 8px;
   font-weight: 700;
   filter: drop-shadow(4px 4px 10px hsl(26, 100%, 55%));
+  cursor: pointer;
 }
 
 .button:hover {
-  filter: opacity(70%) drop-shadow(4px 4px 10px hsl(26, 100%, 55%));
+  filter: opacity(70%);
 }
