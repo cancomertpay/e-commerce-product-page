@@ -1,0 +1,25 @@
+.slide {
+  height: 100%;
+  text-align: center;
+}
+
+.slide img {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: opacity 1s ease;
+  object-fit: cover;
+}
+
+.slide-hidden {
+  opacity: 0;
+  display: none;
+}
+
+@media only screen and (min-width: 1000px) {
+  .slide img {
+    border-radius: 15px;
+    cursor: pointer;
+  }
+}

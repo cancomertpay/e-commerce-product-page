@@ -11,7 +11,7 @@
   border-radius: 50%;
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1000px) {
   .avatar {
     margin-left: 2rem;
   }

@@ -1,0 +1,29 @@
+.slider {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.mobile-hidden {
+  display: none;
+}
+
+@media only screen and (min-width: 1000px) {
+  .mobile-hidden {
+    display: block;
+  }
+
+  .slider {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .thumbnails-container {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+}

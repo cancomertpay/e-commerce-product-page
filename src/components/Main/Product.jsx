@@ -4,17 +4,17 @@ import { useDispatch } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
 import { uiActions } from "../../store/ui-slice";
 // components
-import ImageSlider from "../Shop/ImageSlider";
+import ImageSlider from "../Image-Slider/ImageSlider";
 import Button from "../UI/Button";
 import MinusIcon from "../UI/Icons/MinusIcon";
 import PlusIcon from "../UI/Icons/PlusIcon";
-// import Lightbox from "../Main/Lightbox";
 // styles
 import classes from "./Product.module.css";
 // custom hooks
 import useDiscounter from "../../hooks/useDiscounter";
 // icons
 import cartIcon from "../../assets/images/icon-cart-btn.svg";
+import LightBox from "../Image-Slider/Lightbox";
 
 function Product({
   id,
@@ -66,7 +66,6 @@ function Product({
   // states
   const [productQty, setProductQty] = useState(0);
   const [dumbAnimation, setDumbAnimation] = useState(false);
-  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   const increaseQty = () => {
     setDumbAnimation((prev) => !prev);
@@ -92,13 +91,9 @@ function Product({
 
   return (
     <>
-      <div
-        className={classes.thumbnail}
-        onClick={() => setIsLightboxOpen((prev) => !prev)}
-      >
-        <ImageSlider title={title} thumbnail={thumbnail} />
+      <div>
+        <ImageSlider title={title} images={image} thumbnails={thumbnail} />
       </div>
-      {/* <Lightbox isOpen={isLightboxOpen} /> */}
       <div className={classes["product-container"]}>
         <div className={classes["product-header"]}>
           <h3>{brand.toLocaleUpperCase()}</h3>

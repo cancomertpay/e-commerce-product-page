@@ -28,7 +28,6 @@
   background-color: hsl(0, 0%, 100%);
   border-radius: 8px;
   margin-top: 5.2rem;
-  position: relative;
   animation: cartAnimation 0.3s linear;
   box-shadow: -1px 11px 79px 12px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: -1px 11px 79px 12px rgba(0, 0, 0, 0.75);
@@ -65,9 +64,9 @@ hr {
   box-sizing: border-box;
 }
 
-@media only screen and (min-width: 1200px) {
-  .shop-cart-container {
-    left: 30rem;
+@media only screen and (min-width: 1000px) {
+  .shop-cart {
+    left: 33%;
   }
 
   .shop-cart {

@@ -1,9 +1,15 @@
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1000px) {
   .main {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8rem 6rem;
-    padding: 6rem 15rem;
+    padding: 6% 5%;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .main {
+    padding: 6% 15%;
   }
 }

@@ -1,0 +1,34 @@
+.thumbnail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.thumbnail img {
+  width: 100% !important;
+  height: 100% !important;
+  transition: all 0.5s;
+}
+
+.thumbnail img:hover {
+  filter: drop-shadow(4px 4px 10px hsl(26, 100%, 55%));
+  transform: scale(1.1)
+}
+
+.active {
+  filter: opacity(20%);
+}
+
+.active-border {
+  border: 3px solid hsl(26, 100%, 55%);
+  border-radius: 20px;
+  transform: scale(1.1)
+}
+
+@media only screen and (min-width: 1000px) {
+  .thumbnail img  {
+    border-radius: 15px;
+    cursor: pointer;
+  }
+}

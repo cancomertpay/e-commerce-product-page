@@ -1,0 +1,52 @@
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  z-index: 2;
+  padding: 3%;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 50%;
+  object-fit: cover;
+  text-align: end;
+}
+
+.arrow svg {
+  stroke: hsl(220, 13%, 13%);
+}
+
+.arrow svg:hover {
+  stroke: hsl(26, 100%, 55%);
+}
+
+.arrow.left {
+  left: 15px;
+}
+
+.arrow.right {
+  right: 15px;
+}
+
+@media only screen and (min-width: 1000px) {
+  .arrows-hidden {
+    display: none;
+  }
+
+  .arrow {
+    top: 40%;
+  }
+
+  .arrow.left {
+    left: -25px;
+  }
+  
+  .arrow.right {
+    right: -25px;
+  }
+  
+}

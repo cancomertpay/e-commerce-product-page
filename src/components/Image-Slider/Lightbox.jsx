@@ -2,16 +2,25 @@ import React from "react";
 import ReactDOM from "react-dom";
 // components
 import CloseIcon from "../UI/Icons/CloseIcon";
+import ImageSlider from "./ImageSlider";
 // styles
 import classes from "./Lightbox.module.css";
 
-function LightBox({isOpen= false, images}) {
+function Lightbox({ isOpen = false, onClose, images, thumbnails, title }) {
   return isOpen
     ? ReactDOM.createPortal(
         <div className={classes["lightbox-container"]}>
           <div className={classes.lightbox}>
-            <div>
+            <div className={classes.close} onClick={onClose}>
               <CloseIcon />
+            </div>
+            <div>
+              <ImageSlider
+                images={images}
+                thumbnails={thumbnails}
+                title={title}
+                isInLightbox={true}
+              />
             </div>
           </div>
         </div>,
@@ -20,4 +29,4 @@ function LightBox({isOpen= false, images}) {
     : null;
 }
 
-export default LightBox;
+export default Lightbox;
