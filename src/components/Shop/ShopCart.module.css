@@ -23,6 +23,7 @@
 }
 
 .shop-cart {
+  position: relative;
   box-sizing: border-box;
   width: 90%;
   background-color: hsl(0, 0%, 100%);
