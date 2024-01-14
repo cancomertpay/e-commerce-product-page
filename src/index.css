@@ -14,7 +14,3 @@ body {
   color: hsl(220, 13%, 13%);
   background-color: hsl(0, 0%, 100%);
 }
-
-#shop-cart {
-  position: relative;
-}
