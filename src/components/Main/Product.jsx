@@ -97,7 +97,7 @@ function Product({
       <div className={classes["product-container"]}>
         <div className={classes["product-header"]}>
           <h3>{brand.toLocaleUpperCase()}</h3>
-          <h2>{title}</h2>
+          <h1>{title}</h1>
           <p>{description}</p>
         </div>
         <div className={classes["price-container"]}>
@@ -115,13 +115,13 @@ function Product({
         </div>
         <div className={classes["add-to-cart-container"]}>
           <div className={classes.quantity}>
-            <button className={classes["minus-icon"]} onClick={decreaseQty}>
+            <button aria-label="Decrease Quantity" className={classes["minus-icon"]} onClick={decreaseQty}>
               <MinusIcon />
             </button>
             <p className={`${dumbAnimation ? classes.dumb : ""}`}>
               {productQty}
             </p>
-            <button className={classes["plus-icon"]} onClick={increaseQty}>
+            <button aria-label="Increase Quantity" className={classes["plus-icon"]} onClick={increaseQty}>
               <PlusIcon />
             </button>
           </div>
