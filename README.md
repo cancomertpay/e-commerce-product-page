@@ -1,6 +1,6 @@
 # E-Commerce Product Page
 
-![Project Desktop Preview](./design/desktop-preview.jpg)
+![Project Desktop Preview](./project-design/desktop-preview.jpg)
 
 
 ## Overview
@@ -17,7 +17,7 @@ This repository contains the front-end code for an e-commerce product page, aimi
 
 - **Responsive Design with Mobile-First Approach:** The project is designed to be responsive, ensuring a seamless user experience across various devices. The mobile-first approach is adopted to prioritize mobile users and then enhance the layout for larger screens.
 
-![Project Mobile Preview](./design/mobile-design.jpg)
+![Project Mobile Preview](./project-design/mobile-design.jpg)
 
 ## Project Structure
 
