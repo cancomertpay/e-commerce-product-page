@@ -23,6 +23,3 @@ design
 *.njsproj
 *.sln
 *.sw?
-
-*.md
-/design
