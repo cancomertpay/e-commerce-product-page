@@ -5,7 +5,6 @@ import classes from "./Thumbnail.module.css";
 function Thumbnail({ index, currentImgIndex, image, handleThumbnailClick }) {
   return (
     <span
-      key={index}
       className={`${classes["thumbnail"]} ${
         index === currentImgIndex ? classes["active-border"] : ""
       }`}

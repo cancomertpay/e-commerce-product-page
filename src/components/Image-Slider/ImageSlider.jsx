@@ -63,11 +63,11 @@ function ImageSlider({
     <div>
       {/* slider Images */}
       <div className={`${classes.slider}`}>
-        {images.map((productThumbnail, index) => (
+        {images.map((item, index) => (
           <SliderImage
             key={index}
             index={index}
-            productThumbnail={productThumbnail}
+            productImages={item}
             currentImgIndex={currentImgIndex}
             title={title}
             onClick={!isInLightbox && openLightbox}

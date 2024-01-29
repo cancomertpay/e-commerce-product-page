@@ -5,7 +5,7 @@ import classes from "./SliderImage.module.css";
 function SliderImage({
   index,
   currentImgIndex,
-  productThumbnail,
+  productImages,
   title,
   onClick,
 }) {
@@ -22,7 +22,7 @@ function SliderImage({
     >
       <img
         className={`${currentImgIndex !== index && classes["slide-hidden"]}`}
-        src={productThumbnail}
+        src={productImages}
         alt={title + index}
       />
     </div>
